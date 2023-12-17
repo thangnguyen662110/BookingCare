@@ -1,9 +1,10 @@
+import Navbar from "../../Navbar";
 
 
 const DefaultLayout = ({children}) => {
     return (
         <div className="flex flex-col gap-2">
-            <div>Navbar</div>
+            <Navbar/>
             {children}
             <div>Footer</div>
         </div>
