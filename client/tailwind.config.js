@@ -1,13 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js, ts, jsx, tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        "2md": "900px",
+        "2lg": "1200px",
+      },
       colors: {
         primary: {
+          25: "#edfffa",
           50: "#DAF2F6",
-          100: "#45C3C2",
-          200: "#34929E",
+          100: "#49bce2",
+          200: "#45C3C2",
+          300: "#34929E",
         },
         secondary: {
           50: "#FFFED1",
