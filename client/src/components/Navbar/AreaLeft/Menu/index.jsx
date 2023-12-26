@@ -23,7 +23,7 @@ function Menu() {
       <div>
         <Button icon={IoMenu} size={width > 900 ? 48 : 32} classButton="ml-0 mr-0" classIcon="text-gray-300" onClick={handleShowMenu} />
       </div>
-      <MenuModal body={<MenuItem />} classBody="left-0 w-[240px] p-0" left />
+      <MenuModal body={<MenuItem />} classBody="h-full left-0 w-[240px] p-0" left />
       <Link className="flex items-center w-[160px] 2md:w-[200px] h-12" to={routesConfig.home}>
         <Icon icon={logo} />
       </Link>

@@ -86,7 +86,7 @@ const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right
           {/* Content */}
           <div className={`relative w-full h-full overflow-x-hidden overflow-y-auto no-scrollbar ${classContent && classContent}`}>
             <div className={`absolute border-box bg-white dark:bg-primary-600 shadow-[0_0_14px_rgba(10,10,10,0.5)] ${classBody && classBody}`} ref={modalsRef}>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 w-full h-full">
                 {icon && (
                   <div className={`${classClose && classClose}`}>
                     <Button icon={AiOutlineClose} onClick={handleClose} className="text-primary-200 rounded-full p-2 hover:bg-gray-50 duration-200" classButton="mr-0 ml-0" size={18} />
@@ -111,7 +111,6 @@ ModalCustomScreen.propTypes = {
   footer: PropTypes.node,
   onClose: PropTypes.func.isRequired,
   classContent: PropTypes.string,
-  classClose: PropTypes.string,
   classBody: PropTypes.string,
   classFooter: PropTypes.string,
   left: PropTypes.string,
