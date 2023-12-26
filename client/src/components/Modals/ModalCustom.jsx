@@ -111,6 +111,7 @@ ModalCustomScreen.propTypes = {
   footer: PropTypes.node,
   onClose: PropTypes.func.isRequired,
   classContent: PropTypes.string,
+  classClose: PropTypes.string,
   classBody: PropTypes.string,
   classFooter: PropTypes.string,
   left: PropTypes.string,
