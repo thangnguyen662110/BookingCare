@@ -1,29 +1,31 @@
-import {Routes, Route } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
+import AppUserProvider from "./components/Contexts/AppUserProvider";
 import publicRouterPathComponent from "./router";
 
 function App() {
-
   return (
-    <Routes>
-      {publicRouterPathComponent.map((router,index) => {
-        const path = router.path;
-        const Layout = router.layout;
-        const Page = router.component;
+    <AppUserProvider>
+      <Routes>
+        {publicRouterPathComponent.map((router, index) => {
+          const path = router.path;
+          const Layout = router.layout;
+          const Page = router.component;
 
-        return (
-          <Route 
-            key={index}
-            path={path}
-            element = {
-              <Layout>
-                <Page/>
-               </Layout>
-            }
-          />
-        )
-      })}
-    </Routes>
-  )
+          return (
+            <Route
+              key={index}
+              path={path}
+              element={
+                <Layout>
+                  <Page />
+                </Layout>
+              }
+            />
+          );
+        })}
+      </Routes>
+    </AppUserProvider>
+  );
 }
 
-export default App
+export default App;

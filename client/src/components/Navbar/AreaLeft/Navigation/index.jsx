@@ -74,24 +74,24 @@ function Navigation() {
   }, [itemSearch]);
 
   return (
-    <div className="flex flex-col 2md:flex-row gap-4 w-full">
+    <div className="flex flex-col justify-around 2md:flex-row gap-4 w-full">
       <div className="flex flex-row items-center gap-4">
         {items.map((item, index) => (
-          <>
-            <Item item={item} key={index} />
-          </>
+          <div key={index}>
+            <Item item={item} />
+          </div>
         ))}
       </div>
-      <div className="w-full flex">
+      <div className="w-full">
         {itemSearch.map((item, index) => (
-          <>
+          <div key={index} className="m-[10px]">
             {item?.type === "search" && (
-              <Link key={index} to={item?.to} className="flex flex-row gap-2 items-center bg-white pl-[10px] pr-[10px] border rounded-full m-[10px] h-[48px] w-full 2md:w-[254px]">
+              <Link to={item?.to} className="flex flex-row gap-2 items-center bg-white pl-[10px] pr-[10px] border rounded-full h-[48px] w-full 2md:w-[254px]">
                 <Icon icon={item?.icon} size={18} />
                 <span className="text-[rgb(153,153,153)] text-[14px]">{item?.placeHolder[placeholderIndex]?.name}</span>
               </Link>
             )}
-          </>
+          </div>
         ))}
       </div>
     </div>

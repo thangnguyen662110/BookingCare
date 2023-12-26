@@ -9,8 +9,8 @@ function Item({ item }) {
   return (
     <div>
       {item?.type === "button" && (
-        <Link to={item?.to} className={`${pathName === item?.to ? "font-bold text-white bg-secondary-500 " : "bg-transparent"} pt-[8px] pb-[8px] pl-[10px] pr-[10px] rounded-full`}>
-          <Title title={item?.name} xxxl />
+        <Link to={item?.to} className={`${pathName === item?.to ? "font-bold text-white bg-secondary-500 " : "bg-transparent"} pt-[6px] sm:pt-[8px] pb-[6px] sm:pb-[8px] pl-[8px] sm:pl-[10px] pr-[8px] sm:pr-[10px] rounded-full`}>
+          <Title title={item?.name} className="text-[14px] sm:text-[16px]" />
         </Link>
       )}
     </div>
