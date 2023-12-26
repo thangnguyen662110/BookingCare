@@ -4,7 +4,7 @@ import AreaRight from "./AreaRight";
 const Navbar = () => {
   return (
     <div className="w-full bg-primary-25">
-      <div className="w-full pl-4 pr-4">
+      <div className="w-full pl-2 pr-2">
         <div className="mx-auto w-full lg:max-w-[var(--max-width)] bg-primary-25 p-[10px]">
           <nav className="relative flex items-start 2lg:items-center w-full">
             <div className="flex-1">

@@ -86,7 +86,7 @@ function Navigation() {
         {itemSearch.map((item, index) => (
           <div key={index} className="m-[10px]">
             {item?.type === "search" && (
-              <Link to={item?.to} className="flex flex-row gap-2 items-center bg-white pl-[10px] pr-[10px] border rounded-full h-[48px] w-full 2md:w-[254px]">
+              <Link to={item?.to} className="flex flex-row gap-2 items-center bg-white pl-[10px] pr-[10px] border rounded-full h-[48px] w-full 2md:w-[220px]">
                 <Icon icon={item?.icon} size={18} />
                 <span className="text-[rgb(153,153,153)] text-[14px]">{item?.placeHolder[placeholderIndex]?.name}</span>
               </Link>

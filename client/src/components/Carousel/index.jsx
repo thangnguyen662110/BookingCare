@@ -18,7 +18,7 @@ function Carousel({ slides, component, ...props }) {
 
 Carousel.propTypes = {
   slides: PropTypes.array.isRequired,
-  component: PropTypes.node.isRequired,
+  component: PropTypes.elementType,
 };
 
 export default Carousel;
