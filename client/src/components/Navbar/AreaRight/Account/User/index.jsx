@@ -4,16 +4,18 @@ import { CiLogin, CiLogout } from "react-icons/ci";
 import { GiArchiveRegister } from "react-icons/gi";
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import Item from "./Item";
+import useRegisterLoginModals from "../../../../../hooks/Navbar/Login/useRegisterLoginModal";
+
 const accounts = [
   {
-    to: "/dang-nhap",
     name: "Đăng nhập",
     icon: CiLogin,
+    action: useRegisterLoginModals,
   },
   {
-    to: "/dang-ky",
     name: "Đăng ký",
     icon: GiArchiveRegister,
+    action: useRegisterLoginModals,
   },
 ];
 
@@ -50,7 +52,7 @@ function User() {
       ) : (
         <div className="pt-2 pb-2">
           {accounts.map((account, index) => (
-            <Item item={account} key={index} />
+            <Item item={account} key={index} useRegister={account?.action} />
           ))}
         </div>
       )}

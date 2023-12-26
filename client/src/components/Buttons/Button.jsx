@@ -6,7 +6,7 @@ import Title from "../Title/Title";
 function Button({ className, classButton, background, border, classIcon, active, icon, classTitle, title, size, customSize, disabled, classImg, src, srcDark, srcSet, srcSetDark, alt, onClick, iconPosition, srcPosition, titlePosition, fontBold, fontMedium, xxxl, xxl, xl, large, medium, small, nowrap, titleCustom }) {
   return (
     <button
-      className={`${background ? (disabled ? "" : "bg-primary-200 duration-200 text-primary-300 w-full") : ""} ${border ? (disabled ? "" : "border border-primary-200 text-primary-300 duration-200 w-full ") : ""} ${disabled ? "opacity-70 cursor-not-allowed bg-[#d9d9d9]" : ""} flex items-center transition ${className ? className : "w-full"}`}
+      className={`${background ? (disabled ? "" : "bg-primary-200 hover:bg-primary-300 duration-200 text-white w-full") : ""} ${border ? (disabled ? "" : "border border-primary-200 text-primary-300 duration-200 w-full ") : ""} ${disabled ? "opacity-70 cursor-not-allowed bg-[#d9d9d9]" : ""} flex items-center transition ${className ? className : "w-full"}`}
       type="button"
       disabled={disabled}
       onClick={onClick}

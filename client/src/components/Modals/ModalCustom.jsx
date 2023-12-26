@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Button from "../Buttons/Button";
 
-const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right = false, classBody, body, classFooter, footer, onClose, zIndex, icon }) => {
+const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right = false, classClose, classBody, body, classFooter, footer, onClose, zIndex, icon }) => {
   const modalsRef = useRef(null);
 
   const [showModal, setShowModal] = useState(isOpen);
@@ -73,24 +73,27 @@ const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right
       >
         <div
           className={`
-      translate-x-0
+      ${left && "-translate-x-full"}
+      ${right && "translate-x-0"}
       duration-700
       sm:duration-1000
       h-full
       relative
-      ${!left ? (showModal ? "translate-x-0" : "-translate-x-full opacity-20") : left}
-      ${!right ? (showModal ? "translate-x-0" : "translate-x-full opacity-20") : right}
+      ${left ? (showModal ? "translate-x-0" : "-translate-x-full opacity-20") : left}
+      ${right ? (showModal ? "translate-x-0" : "translate-x-full opacity-20") : right}
       `}
         >
           {/* Content */}
           <div className={`relative w-full h-full overflow-x-hidden overflow-y-auto no-scrollbar ${classContent && classContent}`}>
-            {icon && (
-              <div className="fixed top-[5%] hidden sm:flex sm:right-[545px] md:right-[655px] 2md:right-[720px] rounded-tl-md rounded-bl-md shadow-[0_0_14px_rgba(10,10,10,0.5)]">
-                <Button icon={AiOutlineClose} onClick={handleClose} className="text-white bg-hotel-200 dark:bg-hotel-300 dark:hover:bg-hotel-600 hover:bg-hotel-300 p-2 rounded-tl-md rounded-bl-md" size={24} />
+            <div className={`absolute border-box bg-white dark:bg-primary-600 shadow-[0_0_14px_rgba(10,10,10,0.5)] ${classBody && classBody}`} ref={modalsRef}>
+              <div className="flex flex-col gap-2">
+                {icon && (
+                  <div className={`${classClose && classClose}`}>
+                    <Button icon={AiOutlineClose} onClick={handleClose} className="text-primary-200 rounded-full p-2 hover:bg-gray-50 duration-200" classButton="mr-0 ml-0" size={18} />
+                  </div>
+                )}
+                {body}
               </div>
-            )}
-            <div className={`absolute w-full top-0 min-h-full border-box bg-white dark:bg-primary-600 shadow-[0_0_14px_rgba(10,10,10,0.5)] ${classBody && classBody}`} ref={modalsRef}>
-              {body}
             </div>
 
             {footer && <div className={`flex w-full gap-2 sm:hidden fixed bg-white dark:bg-primary-600 left-0 bottom-0 pb-2 pt-2 pl-3 pr-3 z-[99] border-t dark:border-primary-500 ${classFooter && classFooter}`}>{footer}</div>}
