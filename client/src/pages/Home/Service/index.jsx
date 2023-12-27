@@ -62,9 +62,9 @@ function Service() {
       <Title title="Dịch vụ toàn diện" extraLarge6 className="font-[600]" />
       <div className="flex-1 flex-wrap justify-between items-center flex min-h-0 min-w-0 list-none box-border relative m-0 p-0">
         {items.map((item, index) => (
-          <Link to={item?.to} className="relative w-[48%] h-[80px] md:h-[100px] mb-4 border-[2px] border-[rgb(242,242,242)] rounded-[15px]" key={index}>
+          <Link to={item?.to} className="relative w-[48%] h-[80px] md:h-[100px] mb-4 border-[2px] border-[rgb(242,242,242)] rounded-[32px]" key={index}>
             <div className="relative w-full h-full">
-              <Image src="/images/background-service.png" className="absolute w-full h-full object-cover inset-0 bg-transparent rounded-[32px]" />
+              <Image src="/images/background-service.png" className="absolute w-full h-full object-cover inset-0 bg-transparent rounded-[32px] " />
               <div className="flex flex-row items-center absolute inset-1 md:inset-2 2md:inset-3 lg:inset-4 2lg:inset-5">
                 {item?.icon && (
                   <div className="w-[80px] h-[80px] flex items-center justify-center rounded-full " style={{ background: "radial-gradient(circle, rgb(255, 211, 84), rgb(255, 239, 195), rgb(254, 253, 251), rgb(255, 255, 255)" }}>
