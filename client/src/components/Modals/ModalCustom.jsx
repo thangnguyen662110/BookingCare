@@ -86,7 +86,7 @@ const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right
         >
           {/* Content */}
           <div className={`relative w-full h-full overflow-x-hidden overflow-y-auto no-scrollbar ${classContent && classContent}`}>
-            <div className={`absolute border-box bg-white dark:bg-primary-600 shadow-[0_0_14px_rgba(10,10,10,0.5)] ${classBody && classBody}`} ref={modalsRef}>
+            <div className={`absolute border-box bg-white shadow-[0_0_14px_rgba(10,10,10,0.5)] ${classBody && classBody}`} ref={modalsRef}>
               <div className="flex flex-col gap-2 w-full h-full">
                 {icon && (
                   <div className={`${classClose && classClose}`}>
