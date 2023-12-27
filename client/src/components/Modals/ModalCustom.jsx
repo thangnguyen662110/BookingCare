@@ -115,9 +115,9 @@ ModalCustomScreen.propTypes = {
   classClose: PropTypes.string,
   classBody: PropTypes.string,
   classFooter: PropTypes.string,
-  left: PropTypes.string,
-  right: PropTypes.string,
-  bottom: PropTypes.string,
+  left: PropTypes.bool,
+  right: PropTypes.bool,
+  bottom: PropTypes.bool,
   icon: PropTypes.bool,
   zIndex: PropTypes.string,
 };
