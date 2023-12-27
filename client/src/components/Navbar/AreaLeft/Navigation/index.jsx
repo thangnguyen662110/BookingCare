@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { GrSearch } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import routerConfig from "../../../../config/routerConfig";
 import Icon from "../../../Icon/Icon";
 import Item from "./Item";
@@ -61,6 +61,7 @@ const itemSearch = [
 ];
 
 function Navigation() {
+  const location = useLocation();
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
 
   useEffect(() => {
@@ -74,7 +75,7 @@ function Navigation() {
   }, [itemSearch]);
 
   return (
-    <div className="flex flex-col justify-around 2md:flex-row gap-4 w-full">
+    <div className="flex flex-col 2md:flex-row gap-4 w-full">
       <div className="flex flex-row items-center gap-4">
         {items.map((item, index) => (
           <div key={index}>
@@ -82,18 +83,20 @@ function Navigation() {
           </div>
         ))}
       </div>
-      <div className="w-full">
-        {itemSearch.map((item, index) => (
-          <div key={index} className="m-[10px]">
-            {item?.type === "search" && (
-              <Link to={item?.to} className="flex flex-row gap-2 items-center bg-white pl-[10px] pr-[10px] border rounded-full h-[48px] w-full 2md:w-[220px]">
-                <Icon icon={item?.icon} size={18} />
-                <span className="text-[rgb(153,153,153)] text-[14px]">{item?.placeHolder[placeholderIndex]?.name}</span>
-              </Link>
-            )}
-          </div>
-        ))}
-      </div>
+      {location.pathname !== routerConfig.search && (
+        <div className="w-full">
+          {itemSearch.map((item, index) => (
+            <div key={index} className="m-[10px]">
+              {item?.type === "search" && (
+                <Link to={item?.to} className="flex flex-row gap-2 items-center bg-white pl-[10px] pr-[10px] border rounded-full h-[48px] w-full 2md:w-[220px]">
+                  <Icon icon={item?.icon} size={18} />
+                  <span className="text-[rgb(153,153,153)] text-[14px]">{item?.placeHolder[placeholderIndex]?.name}</span>
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
