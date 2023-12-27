@@ -12,7 +12,7 @@ function Item({ item }) {
           <div className="p-2 sm:p-5 w-full h-full">
             <div className="flex flex-col w-full">
               <div className="aspect-[2/1.5] rounded-[16px]">
-                <Image src={item?.image} className="w-full h-full object-cover rounded-[16px]" />
+                <Image src={item?.image} className="bg-gray-100 w-full h-full object-cover rounded-[16px]" />
               </div>
               <div className="mt-4 flex items-center justify-center text-center w-full">
                 <Title title={item?.description} className="whitespace-pre-wrap title text-[14px] md:text-[16px] font-[400] sm:font-[600] 2md:text-[18px]" />
