@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Button from "../Buttons/Button";
 
-const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right = false, classClose, classBody, body, classFooter, footer, onClose, zIndex, icon }) => {
+const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right = false, bottom, classClose, classBody, body, classFooter, footer, onClose, zIndex, icon }) => {
   const modalsRef = useRef(null);
 
   const [showModal, setShowModal] = useState(isOpen);
@@ -81,6 +81,7 @@ const ModalCustomScreen = ({ isOpen, disabled, classContent, left = false, right
       relative
       ${left ? (showModal ? "translate-x-0" : "-translate-x-full opacity-20") : left}
       ${right ? (showModal ? "translate-x-0" : "translate-x-full opacity-20") : right}
+      ${bottom ? (showModal ? "translate-x-0" : "translate-y-full opacity-20") : right}
       `}
         >
           {/* Content */}
@@ -111,10 +112,12 @@ ModalCustomScreen.propTypes = {
   footer: PropTypes.node,
   onClose: PropTypes.func.isRequired,
   classContent: PropTypes.string,
+  classClose: PropTypes.string,
   classBody: PropTypes.string,
   classFooter: PropTypes.string,
   left: PropTypes.string,
   right: PropTypes.string,
+  bottom: PropTypes.string,
   icon: PropTypes.bool,
   zIndex: PropTypes.string,
 };
