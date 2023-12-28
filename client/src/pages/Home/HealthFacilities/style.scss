@@ -1,0 +1,19 @@
+.swiper-button-next,
+.swiper-button-prev {
+  box-shadow: rgb(201, 236, 240) 2px 2px 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: rgb(181, 231, 237);
+  background-color: rgb(255, 255, 255);
+
+  &::after {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0;
+  }
+}

@@ -21,10 +21,23 @@ function Menu() {
   return (
     <div className="flex flex-row items-center gap-2">
       <div>
-        <Button icon={IoMenu} size={width > 900 ? 48 : 32} classButton="ml-0 mr-0" classIcon="text-gray-300" onClick={handleShowMenu} />
+        <Button
+          icon={IoMenu}
+          size={width > 900 ? 48 : 32}
+          classButton="ml-0 mr-0"
+          classIcon="text-gray-300"
+          onClick={handleShowMenu}
+        />
       </div>
-      <MenuModal body={<MenuItem />} classBody="bg-white h-auto left-0 w-[240px] p-0" left />
-      <Link className="flex items-center w-[160px] 2md:w-[200px] h-12" to={routesConfig.home}>
+      <MenuModal
+        body={<MenuItem />}
+        classBody="bg-white h-screen left-0 w-[240px] p-0"
+        left
+      />
+      <Link
+        className="flex items-center w-[160px] 2md:w-[200px] h-12"
+        to={routesConfig.home}
+      >
         <Icon icon={logo} />
       </Link>
     </div>
